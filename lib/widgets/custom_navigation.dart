@@ -13,11 +13,11 @@ class CustomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> icons = [
-      Icon(Icons.home, color: selectedIndex == 0 ? Colors.lightGreen : Colors.white,size:35),
-      Icon(Icons.wallet, color: selectedIndex == 1 ? Colors.lightGreen : Colors.white,size:35),
+      Icon(Icons.home, color: selectedIndex == 0 ? Colors.lightGreen : Colors.white,size:40),
+      Icon(Icons.wallet, color: selectedIndex == 1 ? Colors.lightGreen : Colors.white,size:40),
       const SizedBox(width: 48), // Space for FAB
-      Icon(Icons.map, color: selectedIndex == 3 ? Colors.lightGreen : Colors.white,size:35),
-      Icon(Icons.settings, color: selectedIndex == 4 ? Colors.lightGreen : Colors.white,size:35),
+      Icon(Icons.map, color: selectedIndex == 3 ? Colors.lightGreen : Colors.white,size:40),
+      Icon(Icons.settings, color: selectedIndex == 4 ? Colors.lightGreen : Colors.white,size:40),
     ];
 
     return BottomAppBar(
