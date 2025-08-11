@@ -29,7 +29,7 @@ class MainNav extends StatelessWidget {
 
       },
 
-      child: Icon(Icons.qr_code),
+      child: Icon(Icons.qr_code,size:20),
 
       ),
 

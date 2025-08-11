@@ -25,7 +25,7 @@ class CustomNavigation extends StatelessWidget {
       notchMargin: 8.0,
       color: Colors.black,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(
