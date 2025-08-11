@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:food_scanner_app/controllers/scan_controller.dart';
 import 'package:food_scanner_app/views/layouts/scan_page.dart';
 import 'package:food_scanner_app/views/layouts/settings_page.dart';
 import 'package:food_scanner_app/views/layouts/wallet_page.dart';
@@ -28,6 +29,7 @@ class MainNav extends StatelessWidget {
       floatingActionButton:GestureDetector(
         onTap: (){
           selectedIndex.value = 2;
+
 
         },
         child: Container(

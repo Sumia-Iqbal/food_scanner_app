@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_scanner_app/helpers/colors.dart';
 import 'package:food_scanner_app/widgets/custom_container.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../controllers/scan_controller.dart';
 
 class ScanPage extends StatelessWidget {
-
+String? scanResult;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    // ScanCodeController controller = Get.put(ScanCodeController());
+
+
 
     return Scaffold(
       body:SafeArea(
@@ -49,9 +57,9 @@ class ScanPage extends StatelessWidget {
                 ]
               ),
               SizedBox(height:20),
-              CustomContainer(title: "Search Food", subtitle: 'Lorem Ipsum goes to..', image: 'assets/images/—Pngtree—handsome indonesian man doing salute_21130015.png', boxColor: secondaryColor),
+              CustomContainer(title: "Search Food", subtitle: 'Lorem Ipsum goes to..', image: 'assets/images/—Pngtree—handsome indonesian man doing salute_21130015.png', boxColor: secondaryColor,onPressed:(){}),
               SizedBox(height:20),
-              CustomContainer(title: "Scan Barcode", subtitle: 'Lorem Ipsum goes to..', image: 'assets/images/—Pngtree—handsome indonesian man doing salute_21130015.png', boxColor: primaryColor),
+              CustomContainer(title: "Scan Barcode", subtitle: 'Lorem Ipsum goes to..', image: 'assets/images/—Pngtree—handsome indonesian man doing salute_21130015.png', boxColor: primaryColor,onPressed:(){}),
               SizedBox(height:30),
               Container(
                 padding:EdgeInsets.all(20),
@@ -86,4 +94,5 @@ class ScanPage extends StatelessWidget {
       )
     );
   }
+
 }

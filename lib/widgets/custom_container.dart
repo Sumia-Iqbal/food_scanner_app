@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../helpers/colors.dart';
 
@@ -7,8 +8,9 @@ class CustomContainer extends StatelessWidget {
   String subtitle;
   String image;
   Color boxColor;
+  VoidCallback onPressed;
 
-   CustomContainer({required this.title,required this.subtitle,required this.image,required this.boxColor,}) ;
+   CustomContainer({required this.title,required this.subtitle,required this.image,required this.boxColor,required this.onPressed}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -16,35 +18,38 @@ class CustomContainer extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
-        Container(
-            padding:EdgeInsets.all(20),
-            width:width,
-            height:height*0.16,
-            decoration:BoxDecoration(
-                color:boxColor,
-                borderRadius: BorderRadius.circular(16)
-            ),
-            child:Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                  Text(title,
-                      style:TextStyle(fontWeight:FontWeight.bold,
-                          fontSize: 30
-                      )
-                  ),
-
-                  Text(subtitle,
-                    style:TextStyle(fontWeight:FontWeight.bold,
-                      color:Colors.black38,
-                      overflow: TextOverflow.ellipsis,
-
+        GestureDetector(
+          onTap:onPressed,
+          child: Container(
+              padding:EdgeInsets.all(20),
+              width:width,
+              height:height*0.16,
+              decoration:BoxDecoration(
+                  color:boxColor,
+                  borderRadius: BorderRadius.circular(16)
+              ),
+              child:Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:[
+                    Text(title,
+                        style:TextStyle(fontWeight:FontWeight.bold,
+                            fontSize: 30
+                        )
                     ),
-                    maxLines:1 ,
-                  ),
 
-                ]
-            )
+                    Text(subtitle,
+                      style:TextStyle(fontWeight:FontWeight.bold,
+                        color:Colors.black38,
+                        overflow: TextOverflow.ellipsis,
+
+                      ),
+                      maxLines:1 ,
+                    ),
+
+                  ]
+              )
+          ),
         ),
         Positioned(
             right:8,
@@ -53,4 +58,5 @@ class CustomContainer extends StatelessWidget {
       ],
     );
   }
+
 }
